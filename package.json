@@ -1,0 +1,74 @@
+{
+  "name": "nyarukotimer",
+  "productName": "NyarukoTimer",
+  "version": "1.0.0",
+  "description": "小巧的计时器工具，提供双向多项计时，支持视频直播色度键。",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --debug",
+    "package": "npm-run-all package:*",
+    "package:mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --out=release --icon=assets/app.icns",
+    "package:win": "electron-packager . --overwrite --platform=win32 --arch=ia32 --out=release --icon=assets/app.ico",
+    "package:linux": "electron-packager . --overwrite --platform=linux --arch=x64 --out=release --icon=assets/app.png",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "eslint src --color"
+  },
+  "repository": "https://github.com/kagurazakayashi/NyarukoTools_Timer",
+  "keywords": [],
+  "author": "KagurazakaYashi",
+  "license": "MIT",
+  "config": {
+    "forge": {
+      "make_targets": {
+        "win32": [
+          "squirrel"
+        ],
+        "darwin": [
+          "zip"
+        ],
+        "linux": [
+          "deb",
+          "rpm"
+        ]
+      },
+      "electronPackagerConfig": {
+        "packageManager": "npm",
+        "icon": "./static/icon.ico",
+        "ignore": "(.idea)|(lite.db)"
+      },
+      "electronWinstallerConfig": {
+        "name": "nyarukolivetimer"
+      },
+      "electronInstallerDebian": {},
+      "electronInstallerRedhat": {},
+      "github_repository": {
+        "owner": "kagurazakayashi",
+        "name": "NyarukoTools_Timer"
+      },
+      "windowsStoreConfig": {
+        "packageName": "nyarukolivetimer",
+        "name": "nyarukolivetimer"
+      }
+    }
+  },
+  "dependencies": {
+    "electron-compile": "^6.4.4",
+    "electron-squirrel-startup": "^1.0.0",
+    "jquery": "^3.3.1",
+    "qrcode-generator": "^1.4.3"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "electron-forge": "^5.2.4",
+    "electron-prebuilt-compile": "4.0.0",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^15.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.12.4"
+  }
+}

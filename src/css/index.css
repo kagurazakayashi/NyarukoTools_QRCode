@@ -1,0 +1,21 @@
+body {
+    display: none;
+    margin: 0;
+    padding: 0;
+}
+#qrstr {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 90%;
+    height: 90%;
+    font-size: 12pt;
+    border: none;
+    padding: 5%;
+    outline: none;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    resize: none;
+}

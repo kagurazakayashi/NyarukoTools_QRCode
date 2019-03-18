@@ -1,0 +1,29 @@
+body {
+    display: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+#qrview, #qrview img, #qrview table, #qrview svg {
+    /* display: block; */
+    position: fixed;
+    z-index: 2;
+    left: 5%;
+    top: 5%;
+    width: 90%;
+    height: 90%;
+    border: none;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+#noqr {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 45%;
+    width: 100%;
+    height: 50%;
+    color: #888;
+    font-size: 12pt;
+}
